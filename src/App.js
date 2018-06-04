@@ -20,8 +20,8 @@ class App extends Component {
 
     }  
     render() {
-        const monthNames = ["Janvier", "Fevrier", "Mars", "Avril", "Mai","Juin","Juillet", "Aout", "Septembre", "Octobre", "Novembre","Decembre"];
-        const dayNames = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+        const monthNames = ["jan.", "fev.", "mar.", "avr.", "mai.","juin.","juil.", "aout.", "sep.", "oct.", "nov.","dec."];
+        const dayNames = ["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
         let day=this.state.day;
         let month=this.state.month;
         let number= this.state.number;
