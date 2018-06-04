@@ -24,7 +24,7 @@ class App extends Component {
             number: number,
         };
 
-    }  
+    }
     render() {
         const monthNames = ["Janvier", "Fevrier", "Mars", "Avril", "Mai","Juin","Juillet", "Aout", "Septembre", "Octobre", "Novembre","Decembre"];
         const dayNames = ["Dim.","Lun.","Mar.","Mer.","Jeu.","Ven.","Sam."];
