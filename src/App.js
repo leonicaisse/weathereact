@@ -6,6 +6,10 @@ class App extends Component {
     
     constructor() {
         super();
+        let CurrentMinutes = new Date(),
+            minutes = CurrentMinutes.getMinutes();
+        let CurrentHour = new Date(),
+            hour = CurrentHour.getHours();
         let CurrentDay = new Date(),
             day = CurrentDay.getDay();
         let CurrentMonth = new Date(),
@@ -13,6 +17,8 @@ class App extends Component {
         let NumberDay = new Date(),
             number = NumberDay.getDate()
         this.state = {
+            minutes : minutes,
+            hour: hour,
             day: day,
             month: month,
             number: number,
@@ -20,8 +26,8 @@ class App extends Component {
 
     }  
     render() {
-        const monthNames = ["jan.", "fev.", "mar.", "avr.", "mai.","juin.","juil.", "aout.", "sep.", "oct.", "nov.","dec."];
-        const dayNames = ["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+        const monthNames = ["Janvier", "Fevrier", "Mars", "Avril", "Mai","Juin","Juillet", "Aout", "Septembre", "Octobre", "Novembre","Decembre"];
+        const dayNames = ["Dim.","Lun.","Mar.","Mer.","Jeu.","Ven.","Sam."];
         let day=this.state.day;
         let month=this.state.month;
         let number= this.state.number;
@@ -32,7 +38,7 @@ class App extends Component {
                     <p className="city"><span className="cityName">Paris</span>, France</p>
                     <div className="currentWeather">
                         <div className="blockDate">
-                            <p className="currentTime">10:00</p>
+                            <p className="currentTime">{this.state.hour}:{this.state.minutes}</p>
                             <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                         </div>
                         <div className="blockWeather">
