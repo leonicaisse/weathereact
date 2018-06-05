@@ -26,8 +26,8 @@ export default class Clock extends Component {
     render() {
         return (
             <div>
-              {this.state.date.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}
-              </div>
+                <p className="currentTime">{this.state.date.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}</p>
+            </div>
         );
     }
 }

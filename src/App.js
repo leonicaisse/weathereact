@@ -32,6 +32,14 @@ class App extends Component {
                 {time: '18:00', temp: 24},
                 {time: '22:00', temp: 19}
             ],
+            skyDay: [
+                {time: '02:00', temp: 13},
+                {time: '06:00', temp: 15},
+                {time: '10:00', temp: 21},
+                {time: '14:00', temp: 25},
+                {time: '18:00', temp: 24},
+                {time: '22:00', temp: 19}
+            ],
             dataMaxWeek: [
                 {time: 'Lun.', temp: 23},
                 {time: 'Mar.', temp: 24},
@@ -47,7 +55,15 @@ class App extends Component {
                 {time: 'Jeu.', temp: 14},
                 {time: 'Ven.', temp: 16},
                 {time: 'Sam.', temp: 15}
-            ]
+            ],
+            skyWeek: [
+                {time: 'Lun.', temp: 23},
+                {time: 'Mar.', temp: 24},
+                {time: 'Mer.', temp: 22},
+                {time: 'Jeu.', temp: 23},
+                {time: 'Ven.', temp: 26},
+                {time: 'Sam.', temp: 25}
+            ],
         };
 
     }
@@ -78,7 +94,7 @@ class App extends Component {
                     <p className="city"><span className="cityName">Paris</span>, France</p>
                     <div className="currentWeather">
                         <div className="blockDate">
-                            <p className="currentTime"><Clock/></p>
+                            <Clock/>
                             <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                         </div>
                         <div className="blockWeather">
@@ -113,6 +129,14 @@ class App extends Component {
                         />
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
+                    <div className="skyDay">
+                        <img src="images/sun.svg"/>
+                        <img src="images/cloud_sun.svg"/>
+                        <img src="images/cloud_sun.svg"/>
+                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg"/>
+                    </div>
                 </div>
                 <div className="weekWeather">
                     <h2 className="categorie-name">Cette semaine</h2>
@@ -148,6 +172,14 @@ class App extends Component {
                         />
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
+                    <div className="skyWeek">
+                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg"/>
+                        <img src="images/cloud_sun.svg"/>
+                        <img src="images/storm.svg"/>
+                        <img src="images/cloud.svg"/>
+                        <img src="images/sun.svg"/>
+                    </div>
                 </div>
             </div>
         );
