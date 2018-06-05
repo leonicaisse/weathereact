@@ -61,7 +61,7 @@ render()
     return (
 
         <div className="App">
-            <div className="currentContainer rain">
+            <div className={"currentContainer"+(this.state.hour>5 && this.state.hour<20 ? " day" : " night")}>
                 <p className="city"><span className="cityName">Paris</span>, France</p>
                 <div className="currentWeather">
                     <div className="blockDate">
@@ -69,9 +69,11 @@ render()
                         <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                     </div>
                     <div className="blockWeather">
+                        {/*::before soleil*/}
                         <p className="currentTemperature">19°c</p>
                         <div className="currentInfos">
                             <p className="currentSky">Ensoleillé</p>
+                            {/*::before goute*/}
                             <p className="currentRain">5%</p>
                         </div>
                     </div>
@@ -107,7 +109,7 @@ render()
                 >
                     <VictoryLine
                         style={{
-                            data: {stroke: "#e82e47"},
+                            data: {stroke: "#5738e8"},
                             axis: {stroke: "none"}
                         }}
                         data={this.state.dataMaxWeek}
@@ -138,5 +140,4 @@ render()
     );
 }
 }
-
 export default App;
