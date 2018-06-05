@@ -115,7 +115,7 @@
 }
 
 .categorie-name {
-    color: #5738e8;
+    color: #1d1d1d;
     font-weight: 300;
     margin: 15px 0 5px 25px;
 }
@@ -125,8 +125,8 @@ hr {
     width: 85%;
     margin: auto;
     padding: 0;
-    color: #5738e8;
-    background-color: #5738e8;
+    color: #1d1d1d;
+    background-color: #1d1d1d;
     border: 0;
 }
 

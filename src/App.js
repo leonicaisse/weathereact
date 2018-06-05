@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
-import {VictoryTheme, VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
+// import ReactDOM from 'react-dom';
+import {VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
 import Clock from "./Clock";
 
 class App extends Component {
@@ -131,12 +130,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyDay">
-                        <img src="images/sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
+                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
                     </div>
                 </div>
                 <div className="weekWeather">
@@ -148,7 +147,7 @@ class App extends Component {
                     >
                         <VictoryLine
                             style={{
-                                data: {stroke: "#5738e8"},
+                                data: {stroke: "#e82e57"},
                                 axis: {stroke: "none"}
                             }}
                             data={this.state.dataMaxWeek}
@@ -175,12 +174,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyWeek">
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/storm.svg"/>
-                        <img src="images/cloud.svg"/>
-                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
+                        <img src="images/storm.svg" alt="icone orage"/>
+                        <img src="images/cloud.svg" alt="icone nuage"/>
+                        <img src="images/sun.svg" alt="icone soleil"/>
                     </div>
                 </div>
             </div>
