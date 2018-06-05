@@ -5,6 +5,7 @@
 
 #WebStorm
 /.idea
+/.idea/workspace.xml
 
 # testing
 /coverage
