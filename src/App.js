@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 // import ReactDOM from 'react-dom';
 import {VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
-import Clock from "./Clock";
+import Clock from "./components/Clock";
 
 class App extends Component {
     constructor() {
@@ -117,7 +117,8 @@ class App extends Component {
                             <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                         </div>
                         <div className="blockWeather">
-                            <div className="currentIcon" style={{backgroundImage : "url('images/"+this.skyIcon(802)+".svg')"}}></div>
+                            <div className="currentIcon"
+                                 style={{backgroundImage: "url('images/" + this.skyIcon(802) + ".svg')"}}></div>
                             <p className="currentTemperature">19°c</p>
                             <div className="currentInfos">
                                 <p className="currentSky">Ensoleillé</p>
@@ -152,12 +153,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyDay">
-                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(804)+".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(802) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(800) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(800) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(800) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(802) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(804) + ".svg"} alt="icone meteo"/>
                     </div>
                 </div>
                 <div className="weekWeather">
@@ -196,12 +197,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyWeek">
-                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(803)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(200)+".svg"} alt="icone meteo"/>
-                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(800) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(802) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(802) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(803) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(200) + ".svg"} alt="icone meteo"/>
+                        <img src={"images/" + this.skyIcon(800) + ".svg"} alt="icone meteo"/>
                     </div>
                 </div>
             </div>
