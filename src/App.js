@@ -61,7 +61,7 @@ render()
     return (
 
         <div className="App">
-            <div className="currentContainer">
+            <div className="currentContainer rain">
                 <p className="city"><span className="cityName">Paris</span>, France</p>
                 <div className="currentWeather">
                     <div className="blockDate">
@@ -69,11 +69,9 @@ render()
                         <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                     </div>
                     <div className="blockWeather">
-                        {/*::before soleil*/}
                         <p className="currentTemperature">19°c</p>
                         <div className="currentInfos">
                             <p className="currentSky">Ensoleillé</p>
-                            {/*::before goute*/}
                             <p className="currentRain">5%</p>
                         </div>
                     </div>
@@ -109,7 +107,7 @@ render()
                 >
                     <VictoryLine
                         style={{
-                            data: {stroke: "#5738e8"},
+                            data: {stroke: "#e82e47"},
                             axis: {stroke: "none"}
                         }}
                         data={this.state.dataMaxWeek}

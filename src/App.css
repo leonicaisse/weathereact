@@ -6,7 +6,7 @@
 
 .currentContainer {
     padding: 30px 0;
-    background: linear-gradient(120deg, #2575fc, #4f119f 90%);
+    /*background: linear-gradient(120deg, #2575fc, #4f119f 90%);*/
     color: white;
     font-weight: 200;
     text-align: center;
@@ -14,18 +14,28 @@
 
 /* Différents dégradé en fonction des états */
 
-.day {
-    background: linear-gradient(to right, #3baed4, #6dd5fa);
+.sunrise{
+    background: linear-gradient(120deg, #5e9dfa, #eddd79);
+}
+.sun {
+    background: linear-gradient(120deg, #3baed4, #6dd5fa);
 }
 
-.night {
-    background: linear-gradient(to left, #b92b27, #1565c0);
+.sunset {
+    background: linear-gradient(120deg, #cd783c, #514386);
 }
-
-.rain {
-    background: linear-gradient(to right, #4b79a1, #283e51);
+.night{
+    background: linear-gradient(120deg, #22213e, #2f2a54);
 }
-
+/*.cloud, .snow{*/
+/*background: linear-gradient(120deg, #a3a3a3, #b4c7d7);*/
+/*}*/
+/*.rain {*/
+/*background: linear-gradient(120deg, #99a8c4, #617387);*/
+/*}*/
+/*.storm{*/
+/*background: linear-gradient(120deg, #565f70, #272d37);*/
+/*}*/
 .currentWeather {
     width: 80%;
     margin: auto;
