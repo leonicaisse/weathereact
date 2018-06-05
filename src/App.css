@@ -10,13 +10,15 @@
     color: white;
     font-weight: 200;
     text-align: center;
+    transition: all linear 1.5s;
 }
 
 /* Différents dégradé en fonction des états */
 
-.sunrise{
+.sunrise {
     background: linear-gradient(120deg, #514386, #cd783c);
 }
+
 .day {
     background: linear-gradient(120deg, #3baed4, #6dd5fa);
 }
@@ -24,9 +26,11 @@
 .sunset {
     background: linear-gradient(120deg, #cd783c, #514386);
 }
-.night{
+
+.night {
     background: linear-gradient(120deg, #22213e, #2f2a54);
 }
+
 /*.cloud, .snow{*/
 /*background: linear-gradient(120deg, #a3a3a3, #b4c7d7);*/
 /*}*/
@@ -109,17 +113,31 @@
     width: 10px;
     height: 10px;
 }
-.categorie-name{
-    color : #5738e8;
+
+.categorie-name {
+    color: #5738e8;
     font-weight: 300;
     margin: 15px 0 5px 25px;
 }
+
 hr {
     height: 1px;
-    width : 85%;
-    margin : auto;
+    width: 85%;
+    margin: auto;
     padding: 0;
     color: #5738e8;
     background-color: #5738e8;
     border: 0;
+}
+
+.skyDay, .skyWeek {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 93%;
+    margin: -18px auto 0 auto;
+}
+
+.skyDay img, .skyWeek img {
+    width: 30%;
+    margin: auto;
 }
