@@ -61,7 +61,7 @@ render()
     return (
 
         <div className="App">
-            <div className="currentContainer">
+            <div className={"currentContainer"+(this.state.hour>5 && this.state.hour<20 ? " day" : " night")}>
                 <p className="city"><span className="cityName">Paris</span>, France</p>
                 <div className="currentWeather">
                     <div className="blockDate">
@@ -140,5 +140,4 @@ render()
     );
 }
 }
-
 export default App;
