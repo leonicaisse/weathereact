@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 
-#WebStorm
+# WebStorm
 /.idea
 /.idea/workspace.xml
 

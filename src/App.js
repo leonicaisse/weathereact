@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
 import {VictoryTheme, VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
+import Clock from "./Clock";
 
 class App extends Component {
     constructor() {
@@ -16,7 +17,7 @@ class App extends Component {
         let CurrentMonth = new Date(),
             month = CurrentMonth.getMonth();
         let NumberDay = new Date(),
-            number = NumberDay.getDate()
+            number = NumberDay.getDate();
         this.state = {
             minutes: minutes,
             hour: hour,
@@ -77,7 +78,7 @@ class App extends Component {
                     <p className="city"><span className="cityName">Paris</span>, France</p>
                     <div className="currentWeather">
                         <div className="blockDate">
-                            <p className="currentTime">{this.state.hour}:{this.state.minutes}</p>
+                            <p className="currentTime"><Clock/></p>
                             <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                         </div>
                         <div className="blockWeather">
