@@ -112,7 +112,8 @@ class App extends Component {
                     <h2 className="categorie-name">Aujourd'hui</h2>
                     <hr/>
                     <VictoryChart
-                        domainPadding={{y: 200}}
+                        domainPadding={{y: 100}}
+                        padding={{top: 0, bottom: 160, left: 50, right: 50}}
                     >
                         <VictoryLine
                             style={{
@@ -142,7 +143,8 @@ class App extends Component {
                     <h2 className="categorie-name">Cette semaine</h2>
                     <hr/>
                     <VictoryChart
-                        domainPadding={{y: 200}}
+                        domainPadding={{y: 100}}
+                        padding={{top: 0, bottom: 160, left: 50, right: 50}}
                     >
                         <VictoryLine
                             style={{

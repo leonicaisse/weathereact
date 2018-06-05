@@ -133,8 +133,8 @@ hr {
 .skyDay, .skyWeek {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 93%;
-    margin: -18px auto 0 auto;
+    width: 94%;
+    margin: -108px auto 0 auto;
 }
 
 .skyDay img, .skyWeek img {
