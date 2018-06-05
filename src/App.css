@@ -12,6 +12,20 @@
     text-align: center;
 }
 
+/* Différents dégradé en fonction des états */
+
+.day {
+    background: linear-gradient(to right, #3baed4, #6dd5fa);
+}
+
+.night {
+    background: linear-gradient(to left, #b92b27, #1565c0);
+}
+
+.rain {
+    background: linear-gradient(to right, #4b79a1, #283e51);
+}
+
 .currentWeather {
     width: 80%;
     margin: auto;

@@ -50,93 +50,95 @@ class App extends Component {
         };
 
     }
-    render() {
-        const monthNames = ["Janv.", "Févr.", "Mars", "Avr.", "Mai", "Juin", "Juill.", "Août", "Sept.", "Oct.", "Nov.", "Déc."];
-        const dayNames = ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."];
-        let day = this.state.day;
-        let month = this.state.month;
-        let number = this.state.number;
-        return (
+render()
+{
+    const monthNames = ["Janv.", "Févr.", "Mars", "Avr.", "Mai", "Juin", "Juill.", "Août", "Sept.", "Oct.", "Nov.", "Déc."];
+    const dayNames = ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."];
+    let day = this.state.day;
+    let month = this.state.month;
+    let number = this.state.number;
 
-            <div className="App">
-                <div className="currentContainer">
-                    <p className="city"><span className="cityName">Paris</span>, France</p>
-                    <div className="currentWeather">
-                        <div className="blockDate">
-                            <p className="currentTime">{this.state.hour}:{this.state.minutes}</p>
-                            <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
-                        </div>
-                        <div className="blockWeather">
-                            {/*::before soleil*/}
-                            <p className="currentTemperature">19°c</p>
-                            <div className="currentInfos">
-                                <p className="currentSky">Ensoleillé</p>
-                                {/*::before goute*/}
-                                <p className="currentRain">5%</p>
-                            </div>
+    return (
+
+        <div className="App">
+            <div className="currentContainer">
+                <p className="city"><span className="cityName">Paris</span>, France</p>
+                <div className="currentWeather">
+                    <div className="blockDate">
+                        <p className="currentTime">{this.state.hour}:{this.state.minutes}</p>
+                        <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
+                    </div>
+                    <div className="blockWeather">
+                        {/*::before soleil*/}
+                        <p className="currentTemperature">19°c</p>
+                        <div className="currentInfos">
+                            <p className="currentSky">Ensoleillé</p>
+                            {/*::before goute*/}
+                            <p className="currentRain">5%</p>
                         </div>
                     </div>
                 </div>
-                <div className="dayWeather">
-                    <h2 className="categorie-name">Aujourd'hui</h2>
-                    <hr/>
-                    <VictoryChart
-                        domainPadding={{y: 200}}
-                    >
-                        <VictoryLine
-                            style={{
-                                data: {stroke: "#5738e8"},
-                                axis: {stroke: "none"}
-                            }}
-                            data={this.state.dataDay}
-                            // data accessor for x values
-                            x="time"
-                            // data accessor for y values
-                            y="temp"
-                            labels={(datum) => datum.y + '°'}
-                            labelComponent={<VictoryLabel renderInPortal dy={-20}/>}
-                        />
-                        <VictoryAxis style={{axis: {stroke: "none"}}}/>
-                    </VictoryChart>
-                </div>
-                <div className="weekWeather">
-                    <h2 className="categorie-name">Cette semaine</h2>
-                    <hr/>
-                    <VictoryChart
-                        domainPadding={{y: 200}}
-                    >
-                        <VictoryLine
-                            style={{
-                                data: {stroke: "#5738e8"},
-                                axis: {stroke: "none"}
-                            }}
-                            data={this.state.dataMaxWeek}
-                            // data accessor for x values
-                            x="time"
-                            // data accessor for y values
-                            y="temp"
-                            labels={(datum) => datum.y + '°'}
-                            labelComponent={<VictoryLabel renderInPortal dy={-20}/>}
-                        />
-                        <VictoryLine
-                            style={{
-                                data: {stroke: "#2871fa"},
-                                axis: {stroke: "none"}
-                            }}
-                            data={this.state.dataMinWeek}
-                            // data accessor for x values
-                            x="time"
-                            // data accessor for y values
-                            y="temp"
-                            labels={(datum) => datum.y + '°'}
-                            labelComponent={<VictoryLabel renderInPortal dy={+40}/>}
-                        />
-                        <VictoryAxis style={{axis: {stroke: "none"}}}/>
-                    </VictoryChart>
-                </div>
             </div>
-        );
-    }
+            <div className="dayWeather">
+                <h2 className="categorie-name">Aujourd'hui</h2>
+                <hr/>
+                <VictoryChart
+                    domainPadding={{y: 200}}
+                >
+                    <VictoryLine
+                        style={{
+                            data: {stroke: "#5738e8"},
+                            axis: {stroke: "none"}
+                        }}
+                        data={this.state.dataDay}
+                        // data accessor for x values
+                        x="time"
+                        // data accessor for y values
+                        y="temp"
+                        labels={(datum) => datum.y + '°'}
+                        labelComponent={<VictoryLabel renderInPortal dy={-20}/>}
+                    />
+                    <VictoryAxis style={{axis: {stroke: "none"}}}/>
+                </VictoryChart>
+            </div>
+            <div className="weekWeather">
+                <h2 className="categorie-name">Cette semaine</h2>
+                <hr/>
+                <VictoryChart
+                    domainPadding={{y: 200}}
+                >
+                    <VictoryLine
+                        style={{
+                            data: {stroke: "#5738e8"},
+                            axis: {stroke: "none"}
+                        }}
+                        data={this.state.dataMaxWeek}
+                        // data accessor for x values
+                        x="time"
+                        // data accessor for y values
+                        y="temp"
+                        labels={(datum) => datum.y + '°'}
+                        labelComponent={<VictoryLabel renderInPortal dy={-20}/>}
+                    />
+                    <VictoryLine
+                        style={{
+                            data: {stroke: "#2871fa"},
+                            axis: {stroke: "none"}
+                        }}
+                        data={this.state.dataMinWeek}
+                        // data accessor for x values
+                        x="time"
+                        // data accessor for y values
+                        y="temp"
+                        labels={(datum) => datum.y + '°'}
+                        labelComponent={<VictoryLabel renderInPortal dy={+40}/>}
+                    />
+                    <VictoryAxis style={{axis: {stroke: "none"}}}/>
+                </VictoryChart>
+            </div>
+        </div>
+    );
+}
 }
 
 export default App;
