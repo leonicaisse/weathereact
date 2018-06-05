@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ReactDOM from 'react-dom';
-import {VictoryTheme, VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
-import Clock from "./Clock";
+import {VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
+import Clock from "./components/Clock";
 
 class App extends Component {
     constructor() {
@@ -130,12 +128,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyDay">
-                        <img src="images/sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg" alt="sun"/>
+                        <img src="images/cloud_sun.svg" alt="nuageux"/>
+                        <img src="images/cloud_sun.svg" alt="nuageux"/>
+                        <img src="images/sun.svg" alt="sun"/>
+                        <img src="images/sun.svg" alt="sun"/>
+                        <img src="images/sun.svg" alt="sun"/>
                     </div>
                 </div>
                 <div className="weekWeather">
@@ -173,12 +171,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyWeek">
-                        <img src="images/sun.svg"/>
-                        <img src="images/sun.svg"/>
-                        <img src="images/cloud_sun.svg"/>
-                        <img src="images/storm.svg"/>
-                        <img src="images/cloud.svg"/>
-                        <img src="images/sun.svg"/>
+                        <img src="images/sun.svg" alt="sun"/>
+                        <img src="images/sun.svg" alt="sun"/>
+                        <img src="images/cloud_sun.svg" alt="nuageux"/>
+                        <img src="images/storm.svg" alt="orage"/>
+                        <img src="images/cloud.svg" alt="nuage"/>
+                        <img src="images/sun.svg" alt="sun"/>
                     </div>
                 </div>
             </div>
