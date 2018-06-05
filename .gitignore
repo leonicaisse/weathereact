@@ -4,6 +4,7 @@
 /node_modules
 
 #WebStorm
+/.idea
 /.idea/workspace.xml
 
 # testing
