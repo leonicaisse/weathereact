@@ -79,6 +79,26 @@ class App extends Component {
         }
     }
 
+    skyIcon(id) {
+        if (id >= 200 && id <= 232) {
+            return "storm";
+        } else if (id >= 300 && id <= 321) {
+            return "drizzle";
+        } else if (id >= 500 && id <= 531) {
+            return "rain";
+        } else if (id >= 600 && id <= 622) {
+            return "snow";
+        } else if (id === 800) {
+            return "sun";
+        } else if (id === 801 || id === 802) {
+            return "cloud_sun";
+        } else if (id === 803 || id === 804) {
+            return "cloud";
+        } else {
+            return "undefined";
+        }
+    }
+
     render() {
         const monthNames = ["Janv.", "Févr.", "Mars", "Avr.", "Mai", "Juin", "Juill.", "Août", "Sept.", "Oct.", "Nov.", "Déc."];
         const dayNames = ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."];
@@ -97,7 +117,7 @@ class App extends Component {
                             <p className="currentDay">{dayNames[day]} {number} {monthNames[month]}</p>
                         </div>
                         <div className="blockWeather">
-                            {/*::before soleil*/}
+                            <div className="currentIcon" style={{backgroundImage : "url('images/"+this.skyIcon(802)+".svg')"}}></div>
                             <p className="currentTemperature">19°c</p>
                             <div className="currentInfos">
                                 <p className="currentSky">Ensoleillé</p>
@@ -113,8 +133,10 @@ class App extends Component {
                     <VictoryChart
                         domainPadding={{y: 100}}
                         padding={{top: 0, bottom: 160, left: 50, right: 50}}
+                        events={[]}
                     >
                         <VictoryLine
+                            events={[]}
                             style={{
                                 data: {stroke: "#5738e8"},
                                 axis: {stroke: "none"}
@@ -130,12 +152,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyDay">
-                        <img src="images/sun.svg" alt="icone soleil"/>
-                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
-                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
-                        <img src="images/sun.svg" alt="icone soleil"/>
-                        <img src="images/sun.svg" alt="icone soleil"/>
-                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(804)+".svg"} alt="icone meteo"/>
                     </div>
                 </div>
                 <div className="weekWeather">
@@ -174,12 +196,12 @@ class App extends Component {
                         <VictoryAxis style={{axis: {stroke: "none"}}}/>
                     </VictoryChart>
                     <div className="skyWeek">
-                        <img src="images/sun.svg" alt="icone soleil"/>
-                        <img src="images/sun.svg" alt="icone soleil"/>
-                        <img src="images/cloud_sun.svg" alt="icone nuage et soleil"/>
-                        <img src="images/storm.svg" alt="icone orage"/>
-                        <img src="images/cloud.svg" alt="icone nuage"/>
-                        <img src="images/sun.svg" alt="icone soleil"/>
+                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(802)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(803)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(200)+".svg"} alt="icone meteo"/>
+                        <img src={"images/"+this.skyIcon(800)+".svg"} alt="icone meteo"/>
                     </div>
                 </div>
             </div>
