@@ -15,9 +15,9 @@
 /* Différents dégradé en fonction des états */
 
 .sunrise{
-    background: linear-gradient(120deg, #5e9dfa, #eddd79);
+    background: linear-gradient(120deg, #514386, #cd783c);
 }
-.sun {
+.day {
     background: linear-gradient(120deg, #3baed4, #6dd5fa);
 }
 
