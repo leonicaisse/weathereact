@@ -8,7 +8,9 @@ export default class Clock extends Component {
 
     componentDidMount() {
         this.timerID = setInterval(
-            () => this.tick(),
+            () => {
+                this.tick()
+            },
             1000
         );
     }

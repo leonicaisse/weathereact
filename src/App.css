@@ -10,7 +10,8 @@
     color: white;
     font-weight: 200;
     text-align: center;
-    transition: all linear 1.5s;
+    transition: background-color linear 1.5s;
+    height: 30vh;
 }
 
 /* Différents dégradé en fonction des états */
@@ -45,11 +46,11 @@
     margin: auto;
 }
 
-.city {
+.location {
     font-size: 2.2em;
 }
 
-.city .cityName {
+.location .cityName {
     font-weight: 400;
 }
 

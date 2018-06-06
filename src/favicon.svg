@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFDE00;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="255.867" y1="333.367" x2="44.133" y2="-33.367">
+	<stop  offset="0" style="stop-color:#5738E8"/>
+	<stop  offset="1" style="stop-color:#6DD5FA"/>
+</linearGradient>
+<rect x="-5" y="-5" class="st0" width="310" height="310"/>
+<g>
+	
+		<ellipse transform="matrix(0.9239 -0.3827 0.3827 0.9239 -45.6626 68.9182)" class="st1" cx="150.4" cy="149.2" rx="79.1" ry="79.1"/>
+	<polygon class="st1" points="133,59.3 91.8,7.8 99.1,73.3 	"/>
+	<polygon class="st1" points="168.3,240.5 209.6,292 202.2,226.4 	"/>
+	<polygon class="st1" points="292.1,91.3 226.6,98.5 240.6,132.5 	"/>
+	<polygon class="st1" points="7.9,209 73.4,201.7 59.4,167.8 	"/>
+	<polygon class="st1" points="226.6,201.7 292.1,209 240.6,167.8 	"/>
+	<polygon class="st1" points="73.4,98.5 7.9,91.3 59.4,132.5 	"/>
+	<polygon class="st1" points="208.9,8 167.7,59.5 201.5,73.6 	"/>
+	<polygon class="st1" points="91.1,292.2 132.3,240.8 98.5,226.7 	"/>
+</g>
+</svg>
