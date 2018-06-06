@@ -4,6 +4,8 @@ import './App.css';
 import {VictoryChart, VictoryLine, VictoryLabel, VictoryAxis} from 'victory';
 import Clock from "./components/Clock";
 
+import axios from 'axios';
+
 class App extends Component {
     constructor() {
         super();
@@ -18,13 +20,16 @@ class App extends Component {
         let NumberDay = new Date(),
             number = NumberDay.getDate();
         this.state = {
-            city: "Paris",
-            country: "France",
+            keyAPI: "38ad5d999b2c5b1341355e4b55ec5400",
+            urlAPI: "",
             minutes: minutes,
             hour: hour,
             day: day,
             month: month,
             number: number,
+            dataCurrent: [],
+            currentTemp: '',
+            currentSky: '',
             dataDay: [
                 {time: "02:00", temp: 13},
                 {time: "06:00", temp: 15},
@@ -53,6 +58,16 @@ class App extends Component {
 
     }
 
+    componentDidMount() {
+        axios.get('http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&appid=38ad5d999b2c5b1341355e4b55ec5400')
+            .then(res => {
+                const dataCurrent = res.data;
+                this.setState({dataCurrent: dataCurrent});
+                this.setState({currentTemp: Math.floor(dataCurrent.main.temp)});
+                this.setState({currentSky: dataCurrent.weather[0].id});
+            })
+    }
+
     renderSky() {
         if (this.state.hour >= 8 && this.state.hour < 19) {
             return "day";
@@ -78,7 +93,7 @@ class App extends Component {
             return "sun";
         } else if (id === 801 || id === 802) {
             return "cloud_sun";
-        } else if (id === 803 || id === 804) {
+        } else if (id === 803 || id === 804 || (id >= 701 && id <= 781)) {
             return "cloud";
         } else {
             return "undefined";
@@ -99,7 +114,7 @@ class App extends Component {
         return <div className="App">
             <div className={"currentContainer " + this.renderSky()}>
                 <p className="location" onClick={App.changeCity}><span
-                    className="cityName">{this.state.city}</span>, {this.state.country}
+                    className="cityName">{this.state.dataCurrent.name}</span>, France
                 </p>
                 <div className="currentWeather">
                     <div className="blockDate">
@@ -108,8 +123,8 @@ class App extends Component {
                     </div>
                     <div className="blockWeather">
                         <div className={"currentIcon"}
-                             style={{backgroundImage: "url('images/" + App.skyIcon(802) + ".svg')"}}/>
-                        <p className="currentTemperature">19°c</p>
+                             style={{backgroundImage: "url('images/" + App.skyIcon(this.state.currentSky) + ".svg')"}}/>
+                        <p className="currentTemperature">{this.state.currentTemp}°c</p>
                         <div className="currentInfos">
                             <p className="currentSky">Ensoleillé</p>
                             {/*::before goute*/}
