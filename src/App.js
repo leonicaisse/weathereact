@@ -283,50 +283,77 @@ class App extends Component {
             month: month,
             number: number,
             dataCurrent: [],
+            dataWeek: [],
             currentTemp: '',
             currentSky: '',
             currentDesc: '',
             currentHum: '',
-            dataDay: [
-                {time: "02:00", temp: 13},
-                {time: "06:00", temp: 15},
-                {time: "10:00", temp: 21},
-                {time: "14:00", temp: 25},
-                {time: "18:00", temp: 24},
-                {time: "22:00", temp: 19}
-            ],
+            dataDay: [],
             dataMaxWeek: [
-                {time: "Lun.", temp: 23},
-                {time: "Mar.", temp: 24},
-                {time: "Mer.", temp: 22},
                 {time: "Jeu.", temp: 23},
                 {time: "Ven.", temp: 26},
-                {time: "Sam.", temp: 25}
+                {time: "Sam.", temp: 27},
+                {time: "Dim.", temp: 30},
+                {time: "Lun.", temp: 29},
             ],
             dataMinWeek: [
-                {time: "Lun.", temp: 15},
-                {time: "Mar.", temp: 15},
-                {time: "Mer.", temp: 13},
-                {time: "Jeu.", temp: 14},
+                {time: "Jeu.", temp: 15},
                 {time: "Ven.", temp: 16},
-                {time: "Sam.", temp: 15}
+                {time: "Sam.", temp: 15},
+                {time: "Dim.", temp: 17},
+                {time: "Lun.", temp: 18},
             ],
         };
 
     }
 
     componentDidMount() {
-        axios.get('http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&appid=38ad5d999b2c5b1341355e4b55ec5400')
+        axios.get('http://api.openweathermap.org/data/2.5/weather?q=Cuincy,fr&units=metric&appid=38ad5d999b2c5b1341355e4b55ec5400')
             .then(res => {
                 const dataCurrent = res.data;
                 this.setState({dataCurrent: dataCurrent});
                 this.setState({currentTemp: Math.round(dataCurrent.main.temp)});
-                this.setState({currentDesc: dataCurrent.weather[0].description});
+                this.setState({currentDesc: dataCurrent.weather[0].main});
                 this.setState({currentHum: dataCurrent.main.humidity});
                 this.setState({currentSky: dataCurrent.weather[0].id});
                 this.setState({countryCode: dataCurrent.sys.country});
 
                 // console.log(this.state.countryList[0]);
+            })
+
+        //    http://api.openweathermap.org/data/2.5/forecast?q=Paris,fr&units=metric&appid=38ad5d999b2c5b1341355e4b55ec5400
+
+        axios.get('http://api.openweathermap.org/data/2.5/forecast?q=Cuincy,fr&units=metric&appid=38ad5d999b2c5b1341355e4b55ec5400')
+            .then(res => {
+                const dataWeek = res.data;
+                this.setState({dataDay: dataWeek.list});
+                console.log('issou', this.state.dataDay);
+                console.log('issou', this.state.dataDay[0].weather[0].id);
+                this.setState({
+                    dataDay: [
+                        {
+                            time: this.state.dataDay[0].dt_txt.slice(11, 16),
+                            temp: Math.round(this.state.dataDay[0].main.temp)
+                        },
+                        {
+                            time: this.state.dataDay[1].dt_txt.slice(11, 16),
+                            temp: Math.round(this.state.dataDay[1].main.temp)
+                        },
+                        {
+                            time: this.state.dataDay[2].dt_txt.slice(11, 16),
+                            temp: Math.round(this.state.dataDay[2].main.temp)
+                        },
+                        {
+                            time: this.state.dataDay[3].dt_txt.slice(11, 16),
+                            temp: Math.round(this.state.dataDay[3].main.temp)
+                        },
+                        {
+                            time: this.state.dataDay[4].dt_txt.slice(11, 16),
+                            temp: Math.round(this.state.dataDay[4].main.temp)
+                        },
+                    ],
+                });
+
             })
     }
 
@@ -372,6 +399,8 @@ class App extends Component {
         let day = this.state.day;
         let month = this.state.month;
         let number = this.state.number;
+
+
         return <div className="App">
             <div className={"currentContainer " + this.renderSky()}>
                 <p className="location" onClick={App.changeCity}><span
@@ -395,7 +424,7 @@ class App extends Component {
                 </div>
             </div>
             <div className="dayWeather">
-                <h2 className="categorie-name">Aujourd'hui</h2>
+                <h2 className="categorie-name">A venir</h2>
                 <hr/>
                 <VictoryChart
                     domainPadding={{y: 100}}
@@ -419,12 +448,11 @@ class App extends Component {
                     <VictoryAxis style={{axis: {stroke: "none"}}}/>
                 </VictoryChart>
                 <div className="skyDay">
-                    <img src={"images/" + App.skyIcon(802) + ".svg"} alt="icone meteo"/>
                     <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
                     <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
                     <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
-                    <img src={"images/" + App.skyIcon(802) + ".svg"} alt="icone meteo"/>
-                    <img src={"images/" + App.skyIcon(804) + ".svg"} alt="icone meteo"/>
+                    <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
+                    <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
                 </div>
             </div>
             <div className="weekWeather">
@@ -468,7 +496,6 @@ class App extends Component {
                     <img src={"images/" + App.skyIcon(802) + ".svg"} alt="icone meteo"/>
                     <img src={"images/" + App.skyIcon(803) + ".svg"} alt="icone meteo"/>
                     <img src={"images/" + App.skyIcon(200) + ".svg"} alt="icone meteo"/>
-                    <img src={"images/" + App.skyIcon(800) + ".svg"} alt="icone meteo"/>
                 </div>
             </div>
         </div>;

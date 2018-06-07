@@ -100,9 +100,14 @@
     height: 40px;
 }
 
+.currentInfos{
+    width : 100%;
+}
 .currentSky {
     float: left;
     font-size: 0.8em;
+    min-width: 100px;
+    text-align: left;
 }
 
 .currentRain {
@@ -138,8 +143,8 @@ hr {
 
 .skyDay, .skyWeek {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 94%;
+    grid-template-columns: repeat(5, 1fr);
+    width: 97%;
     margin: -108px auto 0 auto;
 }
 
